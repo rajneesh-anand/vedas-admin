@@ -2,7 +2,6 @@ import Card from "@components/common/card";
 import Layout from "@components/layouts/app";
 import Image from "next/image";
 import { Table } from "@components/ui/table";
-import ProgressBox from "@components/ui/progress-box/progress-box";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import Button from "@components/ui/button";
@@ -160,13 +159,6 @@ export default function OrderDetailsPage() {
             </span>
           </Button>
         </form>
-      </div>
-
-      <div className="my-5 lg:my-10 flex justify-center items-center">
-        <ProgressBox
-          data={orderStatusData?.order_statuses?.data}
-          status={data?.order?.status?.serial!}
-        />
       </div>
 
       <div className="mb-10">
