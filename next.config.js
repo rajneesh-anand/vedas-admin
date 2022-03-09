@@ -8,7 +8,9 @@ const apiUrl = isProd
   ? " https://vedusone.herokuapp.com/api"
   : "http://localhost:8080/api";
 
-const publicUrl = isProd ? "https://www.vedusone.com" : "http://localhost:3000";
+const publicUrl = isProd
+  ? "https://www.admin.vedusone.com"
+  : "http://localhost:3000";
 
 module.exports = withPWA({
   env: {
