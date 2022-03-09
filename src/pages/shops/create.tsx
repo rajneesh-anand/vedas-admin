@@ -1,4 +1,4 @@
-import OwnerLayout from "@components/layouts/owner";
+import OwnerLayout from "@components/layouts/app";
 import ShopForm from "@components/shop/shop-form";
 import { adminAndOwnerOnly } from "@utils/auth-utils";
 import { GetStaticProps } from "next";
