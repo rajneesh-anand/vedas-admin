@@ -1,4 +1,4 @@
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import CreateOrUpdateOrderStatusForm from "@components/order-status/order-status-form";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

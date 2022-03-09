@@ -1,4 +1,4 @@
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import CouponCreateOrUpdateForm from "@components/coupon/coupon-form";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

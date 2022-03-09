@@ -1,5 +1,5 @@
 import Card from "@components/common/card";
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import ShippingList from "@components/shipping/shipping-list";
 import Search from "@components/common/search";
 

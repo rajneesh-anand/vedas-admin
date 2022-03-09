@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import CreateOrUpdateTagForm from "@components/tag/tag-form";
 import { adminOnly } from "@utils/auth-utils";

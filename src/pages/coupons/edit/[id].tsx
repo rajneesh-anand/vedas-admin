@@ -1,4 +1,4 @@
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import CouponCreateOrUpdateForm from "@components/coupon/coupon-form";
 import ErrorMessage from "@components/ui/error-message";
 import Loader from "@components/ui/loader/loader";

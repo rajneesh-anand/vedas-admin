@@ -1,5 +1,5 @@
 import Card from "@components/common/card";
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import AttributeList from "@components/attribute/attribute-list";
 import ErrorMessage from "@components/ui/error-message";
 import Loader from "@components/ui/loader/loader";

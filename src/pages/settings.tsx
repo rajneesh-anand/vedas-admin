@@ -1,4 +1,4 @@
-import AdminLayout from "@components/layouts/admin";
+import AdminLayout from "@components/layouts/app";
 import SettingsForm from "@components/settings/settings-form";
 import ErrorMessage from "@components/ui/error-message";
 import Loader from "@components/ui/loader/loader";

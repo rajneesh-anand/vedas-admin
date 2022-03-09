@@ -1,4 +1,4 @@
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import CustomerCreateForm from "@components/user/user-form";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";

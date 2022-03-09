@@ -1,5 +1,5 @@
 import Card from "@components/common/card";
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import Search from "@components/common/search";
 import TypeList from "@components/group/group-list";
 import ErrorMessage from "@components/ui/error-message";

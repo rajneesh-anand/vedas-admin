@@ -1,5 +1,5 @@
 import Card from "@components/common/card";
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import Search from "@components/common/search";
 import OrderList from "@components/order/order-list";
 import { useState } from "react";

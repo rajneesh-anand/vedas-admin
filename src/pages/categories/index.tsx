@@ -1,6 +1,6 @@
-import CategoryList from "@components/testinomial/category-list";
+import CategoryList from "@components/category/category-list";
 import Card from "@components/common/card";
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import Search from "@components/common/search";
 import LinkButton from "@components/ui/link-button";
 import { useState } from "react";
@@ -10,7 +10,7 @@ import { SortOrder } from "@ts-types/generated";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { ROUTES } from "@utils/routes";
-import TypeFilter from "@components/testinomial/type-filter";
+import TypeFilter from "@components/category/type-filter";
 import { useCategoriesQuery } from "@data/category/use-categories.query";
 
 export default function Categories() {

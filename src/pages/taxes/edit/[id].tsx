@@ -1,4 +1,4 @@
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import { useRouter } from "next/router";
 import CreateOrUpdateTaxForm from "@components/tax/tax-form";
 import ErrorMessage from "@components/ui/error-message";

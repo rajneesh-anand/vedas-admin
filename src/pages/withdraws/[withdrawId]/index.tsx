@@ -10,7 +10,7 @@ import SelectInput from "@components/ui/select-input";
 import ValidationError from "@components/ui/form-validation-error";
 import { useTranslation } from "next-i18next";
 import { useEffect } from "react";
-import AdminLayout from "@components/layouts/admin";
+import AdminLayout from "@components/layouts/app";
 import { useWithdrawQuery } from "@data/withdraw/use-withdraw.query";
 import { useApproveWithdrawMutation } from "@data/withdraw/use-approve-withdraw.mutation";
 import Card from "@components/common/card";

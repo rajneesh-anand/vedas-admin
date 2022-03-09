@@ -1,5 +1,5 @@
 import Card from "@components/common/card";
-import Layout from "@components/layouts/admin";
+import Layout from "@components/layouts/app";
 import Image from "next/image";
 import { Table } from "@components/ui/table";
 import ProgressBox from "@components/ui/progress-box/progress-box";
