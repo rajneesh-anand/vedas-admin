@@ -26,8 +26,8 @@ export default function LoginVerify() {
         <div className="flex justify-center mb-2">
           <Logo />
         </div>
-        <h3 className="text-center text-green-700  text-body mb-4 mt-4">
-          Login link has been sent to your email address
+        <h3 className="text-center text-green-900  mb-4 mt-4">
+          Login link has been sent to your email address !
         </h3>
       </div>
     </div>

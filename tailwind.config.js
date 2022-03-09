@@ -30,6 +30,13 @@ module.exports = {
         light: withOpacity("--color-light"),
         dark: withOpacity("--color-dark"),
         accent: withOpacity("--color-accent"),
+        body: withOpacity("--text-base"),
+        muted: withOpacity("--text-muted"),
+        heading: withOpacity("--text-heading"),
+        bolder: withOpacity("--text-text-bolder"),
+        "sub-heading": withOpacity("--text-sub-heading"),
+        "body-dark": withOpacity("--text-base-dark"),
+        "muted-light": withOpacity("--text-muted-light"),
         "accent-hover": withOpacity("--color-accent-hover"),
         "accent-300": withOpacity("--color-accent-300"),
         "accent-400": withOpacity("--color-accent-400"),
@@ -51,6 +58,12 @@ module.exports = {
         "gray-700": withOpacity("--color-gray-700"),
         "gray-800": withOpacity("--color-gray-800"),
         "gray-900": withOpacity("--color-gray-900"),
+        "red-500": withOpacity("--color-red-500"),
+        "red-600": withOpacity("--color-red-600"),
+        "red-700": withOpacity("--color-red-700"),
+        "red-800": withOpacity("--color-red-800"),
+        "red-900": withOpacity("--color-red-900"),
+
         social: {
           facebook: "#3b5998",
           "facebook-hover": "#35508a",
@@ -60,17 +73,6 @@ module.exports = {
           google: "#4285f4",
           "google-hover": "#3574de",
         },
-      },
-
-      textColor: {
-        red: withOpacity("--color-red"),
-        body: withOpacity("--text-base"),
-        "body-dark": withOpacity("--text-base-dark"),
-        muted: withOpacity("--text-muted"),
-        "muted-light": withOpacity("--text-muted-light"),
-        heading: withOpacity("--text-heading"),
-        "sub-heading": withOpacity("--text-sub-heading"),
-        bolder: withOpacity("--text-text-bolder"),
       },
 
       height: {

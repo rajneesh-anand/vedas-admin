@@ -87,8 +87,8 @@ export default function LoginPage({ csrfToken }: any) {
         <div className="flex justify-center mb-2">
           <Logo />
         </div>
-        <h3 className="text-center text-base  text-body mb-4 mt-4">
-          Sign In to VedasOne Academy
+        <h3 className="text-center text-cyan-700 text-lg font-semibold mb-4 mt-4">
+          Sign In to VedusOne Academy
         </h3>
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
@@ -97,6 +97,7 @@ export default function LoginPage({ csrfToken }: any) {
             type="email"
             variant="outline"
             className="mb-4"
+            placeholder="Enter your email address"
             {...register("email", {
               required: "You must provide your email address !",
               pattern: {
