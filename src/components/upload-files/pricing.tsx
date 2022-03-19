@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import download from "js-file-download";
 import { toast } from "react-toastify";
 
 const FilesPage: React.FC = () => {
-  const [planFile, setPlanFile] = useState<string | Blob | null>();
-  const [pricingFile, setPricingFile] = useState<string | Blob | null>();
+  const [planInfo, setPlanInfo] = useState<Blob | null>();
+  const [planPricing, setPlanPricing] = useState<Blob | null>();
+  const refPlanInfo = useRef<HTMLInputElement>(null);
+  const refPlanPricing = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState<string>();
 
   useEffect(() => {
@@ -33,27 +35,27 @@ const FilesPage: React.FC = () => {
     }
   }, [message]);
 
-  const handleDownloadPlanFile = async () => {
+  const downloadPlanInfo = async () => {
     const res = await fetch(`${process.env.API_URL}/plans`);
     const data = await res.json();
-    download(JSON.stringify(data), "plans.json");
+    download(JSON.stringify(data), "plans-information.json");
   };
 
-  const handleDownloadPricingFile = async () => {
+  const downloadPlanPricing = async () => {
     const res = await fetch(`${process.env.API_URL}/pricing`);
     const data = await res.json();
-    download(JSON.stringify(data), "pricing.json");
+    download(JSON.stringify(data), "plans-pricing.json");
   };
 
-  const handleUploadPlanFile = async () => {
+  const uploadPlanInfo = async () => {
     setMessage("");
-    if (!planFile) {
-      alert("Please select json file with study plans details !");
+    if (!planInfo) {
+      alert("Please select json file with plans detailed information !");
       return;
     }
 
     const formData = new FormData();
-    formData.append("uploadedFile", planFile);
+    formData.append("uploadedFile", planInfo);
     try {
       const res = await fetch(`${process.env.API_URL}/plans`, {
         method: "POST",
@@ -63,7 +65,8 @@ const FilesPage: React.FC = () => {
       if (res.status >= 400 && res.status < 600) {
         throw new Error("Bad response from server");
       } else {
-        setPlanFile(null);
+        setPlanInfo(null);
+        refPlanInfo.current!.value = "";
         setMessage("success");
       }
     } catch (error) {
@@ -71,15 +74,15 @@ const FilesPage: React.FC = () => {
     }
   };
 
-  const handleUploadPricingFile = async () => {
+  const uploadPlanPricing = async () => {
     setMessage("");
-    if (!pricingFile) {
-      alert("Please select json file with plans pricing !");
+    if (!planPricing) {
+      alert("Please select json file with plans pricing information !");
       return;
     }
 
     const formData = new FormData();
-    formData.append("uploadedFile", pricingFile);
+    formData.append("uploadedFile", planPricing);
     try {
       const res = await fetch(`${process.env.API_URL}/pricing`, {
         method: "POST",
@@ -89,7 +92,8 @@ const FilesPage: React.FC = () => {
       if (res.status >= 400 && res.status < 600) {
         throw new Error("Bad response from server");
       } else {
-        setPricingFile(null);
+        setPlanPricing(null);
+        refPlanPricing.current!.value = "";
         setMessage("success");
       }
     } catch (error) {
@@ -100,68 +104,68 @@ const FilesPage: React.FC = () => {
   return (
     <>
       <div className="flex flex-col lg:flex-row items-center lg:justify-between mb-2">
-        <div className="flex items-center justify-center">
-          <label className="w-[320px] flex flex-col items-center py-2 text-blue-600 rounded-md border border-blue-700 cursor-pointer ">
-            <span className="text-base leading-normal">
-              Select Plans Details Json File
-            </span>
-            <input
-              type="file"
-              className="hidden"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                const target = e.target as HTMLInputElement;
-                const file = target.files![0];
-                setPlanFile(file);
-              }}
-            />
-          </label>
-        </div>
-
-        <button
-          onClick={handleUploadPlanFile}
-          className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border  text-sm w-[240px]"
-        >
-          Upload Plans Details File
-        </button>
-
-        <button
-          onClick={handleDownloadPlanFile}
-          className="px-5 py-2.5 ml-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border  text-sm w-[240px]"
-        >
-          Download Plans Details File
-        </button>
-      </div>
-      <div className="flex flex-col lg:flex-row items-center lg:justify-between mb-2">
-        <div className="flex items-center justify-center">
-          <label className="w-[320px] flex flex-col items-center py-2 text-blue-600 rounded-md border border-blue-700 cursor-pointer ">
-            <span className="text-base leading-normal">
-              Select Plans Pricing Json File
-            </span>
-            <input
-              type="file"
-              className="hidden"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                const target = e.target as HTMLInputElement;
-                const file = target.files![0];
-                setPricingFile(file);
-              }}
-            />
-          </label>
-        </div>
-
-        <button
-          onClick={handleUploadPricingFile}
-          className="px-4 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border  text-sm w-[232px]"
-        >
-          Upload Plans Pricing File
-        </button>
-
-        <button
-          onClick={handleDownloadPricingFile}
-          className="px-4 py-2.5 ml-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border text-sm w-[232px]"
-        >
-          Download Plans Pricing File
-        </button>
+        <table>
+          <tr>
+            <td>
+              <input
+                type="file"
+                ref={refPlanInfo}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  const target = e.target as HTMLInputElement;
+                  const file = target.files![0];
+                  setPlanInfo(file);
+                }}
+                className="w-[264px] px-2 py-1 text-sm transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              />
+            </td>
+            <td>
+              <button
+                onClick={uploadPlanInfo}
+                className="px-5 py-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border text-sm w-[324px]"
+              >
+                Upload Plans Description File
+              </button>
+            </td>
+            <td>
+              <button
+                onClick={downloadPlanInfo}
+                className="px-5 py-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border text-sm w-[324px]"
+              >
+                Download Plans Detailed Information
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="file"
+                ref={refPlanPricing}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  const target = e.target as HTMLInputElement;
+                  const file = target.files![0];
+                  setPlanPricing(file);
+                }}
+                className="w-[264px] px-2 py-1 text-sm transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              />
+            </td>
+            <td>
+              <button
+                onClick={uploadPlanPricing}
+                className="px-5 py-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border text-sm w-[324px]"
+              >
+                Upload Plans Pricing Information
+              </button>
+            </td>
+            <td>
+              <button
+                onClick={downloadPlanPricing}
+                className="px-5 py-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border text-sm w-[324px]"
+              >
+                Download Plans Pricing Information
+              </button>
+            </td>
+          </tr>
+        </table>
       </div>
     </>
   );
