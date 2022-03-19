@@ -189,7 +189,45 @@ const Sidebar: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }: Props) => {
                         pathname.includes("files") && "text-indigo-300"
                       } text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200`}
                     >
-                      Upload Files
+                      Plans Pricing
+                    </span>
+                  </div>
+                </Link>
+              </li>
+
+              <li
+                className={`px-3 py-2 rounded-sm mb-0.5 last:mb-0 ${
+                  pathname.includes("chapters") && "bg-gray-900"
+                }`}
+              >
+                <Link
+                  href="/chapters"
+                  className={`block text-gray-200 hover:text-white truncate transition duration-150 ${
+                    pathname.includes("chapters") && "hover:text-gray-200"
+                  }`}
+                >
+                  <div className="flex items-center">
+                    <svg className="shrink-0 h-6 w-6" viewBox="0 0 24 24">
+                      <path
+                        className={`fill-current text-gray-600 ${
+                          pathname.includes("chapters") && "text-indigo-500"
+                        }`}
+                        d="M 23.994 0.606 C 23.994 0.271 23.652 0 23.23 0 L 4.711 0 C 2.11 0 0 1.679 0 3.737 L 0 20.263 C 0 22.326 2.116 24 4.711 24 L 23.237 24 C 23.659 24 24 23.729 24 23.394 L 24 6.873 C 24 6.538 23.659 6.267 23.237 6.267 L 4.711 6.267 C 2.954 6.267 1.521 5.13 1.521 3.737 C 1.521 2.343 2.954 1.206 4.711 1.206 L 23.237 1.206 C 23.652 1.206 23.994 0.935 23.994 0.606 Z M 4.711 7.473 L 22.473 7.473 L 22.473 22.794 L 4.711 22.794 C 2.954 22.794 1.521 21.657 1.521 20.263 L 1.521 6.484 C 2.358 7.099 3.482 7.473 4.711 7.473 Z"
+                      ></path>
+
+                      <path
+                        className={`fill-current text-gray-600 ${
+                          pathname.includes("chapters") && "text-indigo-500"
+                        }`}
+                        d="M 5.727 3 C 5.324 3 5 3.335 5 3.75 C 5 4.165 5.324 4.5 5.727 4.5 L 22.273 4.5 C 22.676 4.5 23 4.165 23 3.75 C 23 3.335 22.676 3 22.273 3 L 5.727 3 Z"
+                      ></path>
+                    </svg>
+                    <span
+                      className={` ${
+                        pathname.includes("chapters") && "text-indigo-300"
+                      } text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200`}
+                    >
+                      Class Chapters
                     </span>
                   </div>
                 </Link>

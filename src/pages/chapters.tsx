@@ -4,7 +4,7 @@ import { getSession } from "next-auth/react";
 import { ROUTES } from "@utils/routes";
 import AppLayout from "@components/layouts/app";
 
-const FilesPage = dynamic(() => import("@components/upload-files/pricing"));
+const ChaptersPage = dynamic(() => import("@components/upload-files/chapters"));
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
@@ -21,8 +21,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-export default function UploadFiles() {
-  return <FilesPage />;
+export default function ChaptersUpload() {
+  return <ChaptersPage />;
 }
 
-UploadFiles.Layout = AppLayout;
+ChaptersUpload.Layout = AppLayout;
