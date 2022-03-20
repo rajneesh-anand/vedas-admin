@@ -123,7 +123,7 @@ const FilesPage: React.FC = () => {
                 onClick={uploadPlanInfo}
                 className="px-5 py-2 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 border text-sm w-[324px]"
               >
-                Upload Plans Description File
+                Upload Plans Detailed Information
               </button>
             </td>
             <td>

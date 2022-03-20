@@ -175,6 +175,20 @@ const Sidebar: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }: Props) => {
                         className={`fill-current text-gray-600 ${
                           pathname.includes("files") && "text-indigo-500"
                         }`}
+                        d="M 0 0 L 0 24 L 4.479 21.184 L 8.206 23.527 L 11.935 21.184 L 15.662 23.527 L 19.392 21.184 L 23.875 23.999 L 24 0.13 L 0 0 Z M 22.37 21.549 L 19.392 19.679 L 15.663 22.022 L 11.935 19.679 L 8.206 22.022 L 4.479 19.679 L 1.504 21.549 L 1.504 1.171 L 22.37 1.171 L 22.37 21.549 Z"
+                      />
+
+                      <path
+                        className={`fill-current text-gray-400 ${
+                          pathname.includes("files") && "text-indigo-300"
+                        }`}
+                        d="M 12.333 17 L 6.994 11.557 L 7.025 10.479 C 9.53 10.62 11.478 10.404 11.933 8.473 L 6.593 8.448 L 7.457 7.269 L 11.717 7.318 C 11.068 6.22 9.283 6.085 6.5 6.165 L 7.457 5.011 L 16.5 5 L 15.605 6.139 L 13.105 6.139 C 13.562 6.532 13.897 6.985 13.908 7.368 L 16.5 7.344 L 15.605 8.472 L 13.877 8.497 C 13.607 10.181 11.708 11.178 9.309 11.407 L 14.684 16.999 L 12.333 16.999 L 12.333 17 Z"
+                      />
+
+                      {/* <path
+                        className={`fill-current text-gray-600 ${
+                          pathname.includes("files") && "text-indigo-500"
+                        }`}
                         d="M0 20h24v2H0z"
                       />
                       <path
@@ -182,7 +196,7 @@ const Sidebar: React.FC<Props> = ({ sidebarOpen, setSidebarOpen }: Props) => {
                           pathname.includes("files") && "text-indigo-300"
                         }`}
                         d="M4 18h2a1 1 0 001-1V8a1 1 0 00-1-1H4a1 1 0 00-1 1v9a1 1 0 001 1zM11 18h2a1 1 0 001-1V3a1 1 0 00-1-1h-2a1 1 0 00-1 1v14a1 1 0 001 1zM17 12v5a1 1 0 001 1h2a1 1 0 001-1v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1z"
-                      />
+                      /> */}
                     </svg>
                     <span
                       className={` ${
