@@ -4,7 +4,7 @@ export const API_ENDPOINTS = {
   ATTRIBUTES: "attributes",
   ATTRIBUTE_VALUES: "attribute-values",
   ORDER_STATUS: "order-status",
-  ORDERS: "orders",
+  ORDERS: "/order",
   USERS: "/user",
   TESTINOMIAL: "/testinomial",
   REGISTER: "/auth/register",

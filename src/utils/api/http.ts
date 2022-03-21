@@ -5,7 +5,7 @@ import { getSession } from "next-auth/react";
 import Router from "next/router";
 
 const http = axios.create({
-  baseURL: process.env.API_URL, // TODO: take this api URL from env
+  baseURL: process.env.API_URL,
   timeout: 30000,
   headers: {
     Accept: "application/json",
@@ -19,7 +19,6 @@ http.interceptors.request.use(
     const session = await getSession();
 
     if (session) {
-      console.log(session.accessToken);
       config.headers = {
         ...config.headers,
         Authorization: `Bearer ${session?.accessToken}`,
@@ -42,7 +41,7 @@ http.interceptors.response.use(
       (error.response && error.response.status === 401) ||
       (error.response && error.response.status === 403) ||
       (error.response &&
-        error.response.data.message === "PICKBAZAR_ERROR.NOT_AUTHORIZED")
+        error.response.data.message === "VEDUSONE_ERROR.NOT_AUTHORIZED")
     ) {
       Cookies.remove("AUTH_CRED");
       Router.push(ROUTES.LOGIN);

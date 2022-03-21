@@ -90,7 +90,7 @@ export declare type Order = {
   customer_id: Scalars["Int"];
   customer?: Maybe<User>;
   status: OrderStatus;
-  amount: Scalars["Float"];
+
   sales_tax: Scalars["Float"];
   total: Scalars["Float"];
   paid_total: Scalars["Float"];
@@ -105,6 +105,15 @@ export declare type Order = {
   updated_at: Scalars["DateTime"];
   billing_address?: Maybe<UserAddress>;
   shipping_address?: Maybe<UserAddress>;
+
+  orderDate: Scalars["DateTime"];
+  orderNumber: Scalars["String"];
+  name: Scalars["String"];
+  email: Scalars["String"];
+  class: Scalars["String"];
+  planType: Scalars["String"];
+  amount: Scalars["String"];
+  paymentStatus: Scalars["String"];
 };
 export declare type OrderStatus = {
   id: Scalars["ID"];
