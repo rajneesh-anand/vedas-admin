@@ -91,14 +91,14 @@ const OrderList = ({ orders, onPagination }: IProps) => {
                       <td className="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
                         <div className="flex items-center">
                           <div className="text-sm font-medium leading-5 text-gray-900">
-                            {item.planType}
+                            {item.planType ? item.planType : ""}
                           </div>
                         </div>
                       </td>
                       <td className="px-3 py-4 whitespace-no-wrap border-b border-gray-200">
                         <div className="flex items-center">
                           <div className="text-sm font-medium leading-5 text-gray-900">
-                            {item.amount}
+                            {item.amount ? item.amount : ""}
                           </div>
                         </div>
                       </td>
