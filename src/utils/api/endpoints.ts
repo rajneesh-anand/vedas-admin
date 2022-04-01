@@ -8,6 +8,7 @@ export const API_ENDPOINTS = {
   USERS: "/user",
   TESTINOMIAL: "/testinomial",
   REGISTER: "/auth/register",
+  SERVICE: "/service",
   PRODUCTS: "/products",
   POPULAR_PRODUCTS: "popular-products",
   COUPONS: "coupons",

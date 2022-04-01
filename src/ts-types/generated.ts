@@ -148,6 +148,17 @@ export declare type Testinomial = {
   created_at: Scalars["DateTime"];
 };
 
+export declare type Service = {
+  id: Scalars["ID"];
+  name: Scalars["String"];
+  price: Scalars["String"];
+  discountedPrice: Scalars["String"];
+  status: Scalars["String"];
+  description: Scalars["String"];
+  image: Scalars["String"];
+  created_at: Scalars["DateTime"];
+};
+
 export declare type Product = {
   id: Scalars["ID"];
   shop_id: Scalars["ID"];
@@ -292,6 +303,13 @@ export declare type TestinomialPaginator = {
   paginatorInfo: PaginatorInfo;
   /** A list of Product items. */
   data: Array<Testinomial>;
+};
+
+export declare type ServicePaginator = {
+  /** Pagination information about the list of items. */
+  paginatorInfo: PaginatorInfo;
+  /** A list of Product items. */
+  data: Array<Service>;
 };
 export declare type Category = {
   id: Scalars["ID"];

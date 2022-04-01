@@ -50,9 +50,7 @@ export type ProductsQueryOptionsType = {
 
 export type TestinomialQueryOptionsType = {
   page?: number;
-
   text?: string;
-
   status?: string;
   limit?: number;
   orderBy?: string;
