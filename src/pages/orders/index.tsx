@@ -14,7 +14,7 @@ export default function Orders() {
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
   const { t } = useTranslation();
-  const [orderBy, setOrder] = useState("created_at");
+  const [orderBy, setOrder] = useState("orderDate");
   const [sortedBy, setColumn] = useState<SortOrder>(SortOrder.Desc);
 
   const {
@@ -22,10 +22,22 @@ export default function Orders() {
     isLoading: loading,
     error,
   } = useOrdersQuery({
-    limit: 20,
-    page,
     text: searchTerm,
+    limit: 25,
+    page,
+    orderBy,
+    sortedBy,
   });
+
+  // const {
+  //   data,
+  //   isLoading: loading,
+  //   error,
+  // } = useOrdersQuery({
+  //   limit: 20,
+  //   page,
+  //   text: searchTerm,
+  // });
   if (loading) return <Loader text={t("common:text-loading")} />;
   if (error) return <ErrorMessage message={error.message} />;
   function handleSearch({ searchText }: { searchText: string }) {

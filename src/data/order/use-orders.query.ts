@@ -6,18 +6,11 @@ import { API_ENDPOINTS } from "@utils/api/endpoints";
 
 const fetchOrders = async ({ queryKey }: QueryParamsType) => {
   const [_key, params] = queryKey;
-  const {
-    text,
-    shop_id,
-    page = 1,
-    limit = 20,
-    orderBy = "updated_at",
-    sortedBy = "DESC",
-  } = params as QueryOptionsType;
+  const { text, page, limit, orderBy, sortedBy } = params as QueryOptionsType;
   const searchString = stringifySearchQuery({
     tracking_number: text,
   });
-  const url = `${API_ENDPOINTS.ORDERS}?search=${searchString}&shop_id=${shop_id}&page=${page}&limit=${limit}&orderBy=${orderBy}&sortedBy=${sortedBy}`;
+  const url = `${API_ENDPOINTS.ORDERS}?&page=${page}&limit=${limit}&orderBy=${orderBy}&sortedBy=${sortedBy}`;
   const {
     data: { data, ...rest },
   } = await Orders.all(url);
